@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: geracaobahia
+    schema: public
+    tables:
+      - name: geracao
+        description: "Tabela que contém dados históricos de fator de capacidade de geração eólica e solar "
+        columns:
+          - name: id_subsistema
+            description: "Identificador do subsistema"
+          - name: nom_subsistema 
+            description: "Nome do subsistema"
+          - name: id_estado 
+            description: "Sigla do Estado"
+          - name: nom_estado 
+            description: "Nome do Estado"
+          - name: nom_pontoconexao 
+            description: "Nome do ponto de conexão da usina/conjunto"
+          - name: nom_localizacao 
+            description: "Localização da usina/conjunto"
+          - name: val_latitudesecoletora  
+            description: "Latitude da usina/conjunto"
+          - name: val_longitudesecoletora 
+            description: "Longitude da usina/conjunto"
+          - name: val_latitudepontoconexao 
+            description: "Latitude do Ponto de Conexão"
+          - name: val_longitudepontoconexao 
+            description: "Longitude do Ponto de Conexão"
+          - name: nom_modalidadeoperacao
+            description: "Modalidade de operação"
+          - name: nom_tipousina
+            description: "Tipo da usina"
+          - name: nom_usina_conjunto
+            description: "Nome da usina/conjunto"
+          - name: din_instante 
+            description: "Data"
+          - name: id_ons 
+            description: "Identificador da usina ou conjunto no ONS"
+          - name: ceg  
+            description: "Código Único do Empreendimento de Geração (CEG), estabelecido pela ANEEL"
+          - name: val_geracaoprogramada  
+            description: "Geração Programada, em MWmed"
+          - name: val_geracaoverificada   
+            description: "Geração Verificada, em MWmed"
+          - name: val_capacidadeinstalada   
+            description: "Capacidade instalada, em MW"
+          - name: val_fatorcapacidade  
+            description: "Fator de capacidade, obtida pela relação entre a geração e a capacidade instalada"
+          
+
+
+
+          
