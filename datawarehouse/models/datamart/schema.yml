@@ -1,0 +1,16 @@
+version: 2
+
+models:
+      - name: dm_geracao
+        description: "Datamart que contém as médias mensais de fator de capacidade de geração eólica e solar em 2023"
+        columns:
+          - name: tipo
+            description: "Tipo de usina de geração de energia"
+          - name: mes
+            description: "Mes referente a média"
+          - name: media_fator_capacidade
+            description: "Valor médio do fator capacidade"
+
+
+          
+
