@@ -7,7 +7,10 @@ No caso deste projeto usaremos dados abertos da ONS a respeito do fator de capac
 ## Passos do Workflow
 
 
-![alt text](figures\image.png)
+<p align="center">
+  <img src="https://github.com/victorcbarros/datawarehouse-dbt-core/blob/main/figures/image.png" alt="Workflow Image">
+</p>
+
 
 
 1. **Iniciar**
