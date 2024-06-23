@@ -18,7 +18,6 @@ graph TD;
     H --> I[Concluir]; 
 ```
 
-
 1. **Iniciar**
     - Representa o início do processo.
 
@@ -43,11 +42,8 @@ graph TD;
 8. **Importar para visualização no dashboard em Streamlit**
     - Os dados são importados para visualização em um dashboard utilizando Streamlit.
 
-
 ## Referencias
 
 Link do workshop do Luciano: https://github.com/lvgalvao/workshop-aberto-dw-do-zero-aovivo
 
 Link dos dados abertos da ONS utilizados: https://dados.ons.org.br/dataset/fator-capacidade-2
-
-
