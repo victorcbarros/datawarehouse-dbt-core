@@ -1,3 +1,4 @@
+#imports
 import pandas as pd
 from sqlalchemy import create_engine 
 from dotenv import load_dotenv
@@ -19,7 +20,7 @@ DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 engine = create_engine(DATABASE_URL)
 
-
+# função que faz a leitura e e salva os dados em dataframes mensais
 def ler_e_salvar_dataframes(urls):
     dataframes = []
 
@@ -32,6 +33,7 @@ def ler_e_salvar_dataframes(urls):
 
     return dataframes
 
+# função que filtra por uma coluna os dados das bases de dados mensais e concatena
 def filtrar_nordeste_e_concatena(dataframes,nome_coluna,valor_para_filtrar):
     dataframes_filtrados = []
     for df in dataframes:
@@ -42,6 +44,7 @@ def filtrar_nordeste_e_concatena(dataframes,nome_coluna,valor_para_filtrar):
 
     return df_final
 
+#função que salva em postgre a base de dados filtrada e concatenada
 def salvar_no_postgres(df,schema='public'):
     df.to_sql('geracao', engine, if_exists ='replace',schema=schema)
 
@@ -61,11 +64,15 @@ if __name__ == "__main__":
             'https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/fator_capacidade_2_di/FATOR_CAPACIDADE-2_2023_11.csv',
             'https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/fator_capacidade_2_di/FATOR_CAPACIDADE-2_2023_12.csv'
             ]
-    
+    #le as urls passadas disponiveis no site da ons
     dataframes = ler_e_salvar_dataframes(urls)
+    # pega a coluna que sera filtrada
     nome_coluna = 'id_estado'
+    # o valor para ser filtrado
     valor_para_filtrar = 'BA'
+    # chama a função que filtra e concatena pelas condições dadas
     base_bahia = filtrar_nordeste_e_concatena(dataframes,nome_coluna,valor_para_filtrar)
+    # salva em postgre
     salvar_no_postgres(base_bahia,schema='public')
 
 
