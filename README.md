@@ -6,11 +6,17 @@ No caso deste projeto usaremos dados abertos da ONS a respeito do fator de capac
 
 ## Passos do Workflow
 
-
-<p align="center">
-  <img src="https://github.com/victorcbarros/datawarehouse-dbt-core/blob/main/figures/image.png" alt="Workflow Image">
-</p>
-
+```mermaid
+graph TD;
+    A(Iniciar) --> B[Ler URLs e Salvar DataFrames];
+    B --> C[Filtrar DataFrames para BA];
+    C --> D[Concatenar DataFrames];
+    D --> E[Salvar no PostgreSQL];
+    E --> F[Salvar a base no dbt core];
+    F --> G[Fazer as análises em SQL];
+    G --> H[Importar para visualização no dashboard em Streamlit];
+    H --> I[Concluir]; 
+```
 
 
 1. **Iniciar**
