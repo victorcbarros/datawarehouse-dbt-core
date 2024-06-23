@@ -30,7 +30,7 @@ with source as (
 renamed as (
 
     select 
-        cast("din_instante" as date) as data,
+        cast("din_instante" as timestamp) as data_hora,
         "nom_subsistema" as regiao,
         "nom_estado" as estado,
         "nom_pontoconexao" as conexao,

@@ -1,0 +1,35 @@
+version: 2
+
+models:
+      - name: stg_geracao
+        description: "Staging que contém dados históricos de fator de capacidade de geração eólica e solar"
+        columns:
+          - name: data_hora
+            description: "Data e hora da coleta dos dados"
+          - name: regiao
+            description: "Nome do subsistema"
+          - name: estado
+            description: "Nome do Estado"
+          - name: conexao
+            description: "Nome do ponto de conexão da usina/conjunto"
+          - name: localizacao
+            description: "Localização da usina/conjunto"
+          - name: tipo
+            description: "Tipo da usina"
+          - name: conjunto
+            description: "Nome da usina/conjunto"
+          - name: codigo_conjunto
+            description: "Identificador da usina ou conjunto no ONS"
+          - name: geracao_programada
+            description: "Geração Programada, em MWmed"
+          - name: geracao_verificada
+            description: "Geração Verificada, em MWmed"
+          - name: capacidade_instalada
+            description: "Capacidade instalada, em MW"
+          - name: fator_capacidade
+            description: "Fator de capacidade, obtido pela relação entre a geração e a capacidade instalada"
+          
+
+
+
+          
